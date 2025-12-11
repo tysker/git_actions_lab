@@ -1,0 +1,22 @@
+name: Split actions into multiple files
+run-name: ${{ github.actor }} is running the workflow
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run shared test action
+        uses: ./.github/actions/jest-test
+
+  bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm install -g bats
+      - run: bats -v

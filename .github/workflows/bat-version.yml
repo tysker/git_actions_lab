@@ -1,9 +1,9 @@
-name: check bat version
+name: my first workflow
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 
 jobs:
-  check-bats-version:
+  workflow-multi:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -13,5 +13,5 @@ jobs:
       - run: npm install -g bats
       - run: bats -v
 
-  node-test:
-    uses: ./.github/actions/test-node-project
+      - name: do something
+        uses: ./.github/actions/test-node-project

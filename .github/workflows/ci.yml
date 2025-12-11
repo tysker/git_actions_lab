@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run shared test action
-        uses: ./.github/actions/jest-test
+        uses: ./.github/actions/jest-test/action
 
   bats-version:
     runs-on: ubuntu-latest

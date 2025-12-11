@@ -14,4 +14,4 @@ jobs:
       - run: bats -v
 
       - name: do something
-        uses: ./.github/actions/test-node-project
+        uses: ./.github/actions/node-test
